@@ -10,11 +10,7 @@ class PilgrimApp extends Controller
 {
     public function pilgrimapp ()
     {
-        function getSponsors() {
-            return DB::table('sponsor_info')->get()->pluck('fullname', 'id');
-        }
-
-        $sponsors = getSponsors();
+        $sponsors = DB::table('sponsor_info')->get()->pluck('fullname', 'id');
 
         return view('pilgrim/pilgrimapp')->with(compact('sponsors'));
 
