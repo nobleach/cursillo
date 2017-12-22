@@ -32,7 +32,6 @@ class LoginController extends Controller
     {
         // Get the authenticated user's role
         $userRole = Auth::user()->role;
-        Log::info($userRole);
         switch ($userRole) {
             case 'pilgrim':
                 return 'pilgrim/pilgrimapp';
