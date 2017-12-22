@@ -27,11 +27,24 @@ class LoginController extends Controller
      * @var string
      */
 
+    // protected $redirectTo = '/dashboard';
+    protected function redirectTo()
+    {
+        // Get the authenticated user's role
+        $userRole = Auth::user()->role;
+        Log::info($userRole);
+        switch ($userRole) {
+            case 'pilgrim':
+                return 'pilgrim/pilgrimapp';
+            case 'sponsor':
+                return 'sponsor/sponsorapp';
+            case 'pastor':
+                return '/pastor/dashboard';
 
-
-
-
-    protected $redirectTo = '/dashboard';
+            default:
+                return '/dashboard';
+        }
+    }
 
     /**
      * Create a new controller instance.
