@@ -39,7 +39,7 @@ Route::prefix('admin')->group(function() {
 Route::prefix('')->group(function() {
   Route::get('pilgrim/pilgrimapp', 'pilgrimControllers\PilgrimApp@pilgrimapp')->middleware('pilgrim');
   Route::post('pilgrim/insert','pilgrimControllers\PilgrimInsertController@insert')->middleware('pilgrim');
-  Route::get('pilgrim/pilgrimappsuccess','pilgrimControllers\PilgrimApp@pilgrimappsuccess')->middleware('pilgrimappsuccess');
+  Route::get('pilgrim/pilgrimappsuccess/{pilgrimId}','pilgrimControllers\PilgrimApp@pilgrimappsuccess')->middleware('pilgrimappsuccess');
 });
 
 
