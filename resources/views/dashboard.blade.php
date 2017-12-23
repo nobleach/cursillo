@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+@foreach($sponsor_pilgrim_pairs as $pair)
+    <div class="pair">
+        <a href="pastor/pastorapp?pilgrim={{$pair->id}}&sponsor={{$pair->sponsor_id}}">{{$pair->firstname}} {{ $pair->lastname }} sponsored by {{ $pair->fullname }}</a>
+    </div>
+@endforeach
 <div class="container dashboard">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
