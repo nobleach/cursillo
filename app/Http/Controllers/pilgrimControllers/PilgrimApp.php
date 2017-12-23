@@ -19,8 +19,7 @@ class PilgrimApp extends Controller
     public function pilgrimappsuccess (Request $request, $pilgrimId)
     {
 
-        $pilgrimInfo = DB::table('pilgrim_info')->where('id', $pilgrimId);
-        return view('pilgrim/pilgrimappsuccess')->with(compact($pilgrimInfo));
-
+        $pilgrimInfo = DB::table('pilgrim_info')->where('id', $pilgrimId)->first();
+        return view('pilgrim/pilgrimappsuccess')->with(compact('pilgrimInfo'));
     }
 }
