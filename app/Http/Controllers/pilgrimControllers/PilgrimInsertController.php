@@ -68,7 +68,6 @@ class PilgrimInsertController extends BaseController
         'datesigned'=>$datesigned,
         'sponsor_id'=>$sponsor_id
       );
-      $id = DB::table('pilgrim_info')->insertGetId($data);
-      return redirect("pilgrim/pilgrimappsuccess/{$id}");
+      return redirect("pilgrim/pilgrimappsuccess/{$sponsor_id}");
     }
 }
