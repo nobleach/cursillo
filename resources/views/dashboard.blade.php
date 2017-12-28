@@ -3,7 +3,7 @@
 @section('content')
 @foreach($sponsor_pilgrim_pairs as $pair)
     <div class="pair">
-        <a href="pastor/pastorapp?pilgrim={{$pair->id}}&sponsor={{$pair->sponsor_id}}">{{$pair->firstname}} {{ $pair->lastname }} sponsored by {{ $pair->fullname }}</a>
+        <a href="pastor/pastorapp?pilgrim_id={{$pair->id}}&sponsor_id={{$pair->sponsor_id}}">{{$pair->firstname}} {{ $pair->lastname }} sponsored by {{ $pair->fullname }}</a>
     </div>
 @endforeach
 <div class="container dashboard">

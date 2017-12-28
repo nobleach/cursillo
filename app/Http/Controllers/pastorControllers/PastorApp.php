@@ -8,14 +8,18 @@ use Illuminate\Http\Request;
 
 class PastorApp extends Controller
 {
-    public function pastorapp ()
+    public function pastorapp (Request $request)
     {
-        $sponsor_pilgrim_pairs = DB::table('pilgrim_info')
-            ->join('sponsor_info', 'pilgrim_info.sponsor_id', '=', 'sponsor_info.id')
-            ->select('pilgrim_info.id', 'pilgrim_info.firstname', 'sponsor_info.fullname')
-            ->get();
+        $pilgrim_id = $request->query('pilgrim_id');
+        $sponsor_id = $request->query('sponsor_id');
+        $pilgrim_info = DB::table('pilgrim_info')
+            ->where('id', $pilgrim_id)
+            ->first();
+        $sponsor_info = DB::table('sponsor_info')
+            ->where('id', $sponsor_id)
+            ->first();
 
-       return view('pastor/pastorapp')->with(compact('$sponsor_pilgrim_pairs'));
+        return view('pastor/pastorapp')->with(compact('pilgrim_info', 'sponsor_info'));
 
     }
 

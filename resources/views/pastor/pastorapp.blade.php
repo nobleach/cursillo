@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+<h3>Pilgrim info:</h3>
+{{ $pilgrim_info->firstname }}
+<h3>Sponsor Info:</h3>
+{{ $sponsor_info->fullname }}
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
