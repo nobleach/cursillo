@@ -55,4 +55,5 @@ Route::prefix('')->group(function() {
   Route::get('pastor/pastorapp', 'pastorControllers\PastorApp@pastorapp')->middleware('pastor');
   Route::post('pastor/insert','pastorControllers\PastorInsertController@insert')->middleware('pastor');
   Route::get('pastor/pastorappsuccess','pastorControllers\PastorApp@pastorappsuccess')->middleware('pastorappsuccess');
+  Route::get('pastor/dashboard','pastorControllers\PastorApp@pastordashboard')->middleware('pastorappsuccess');
 });

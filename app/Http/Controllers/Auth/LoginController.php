@@ -38,7 +38,7 @@ class LoginController extends Controller
             case 'sponsor':
                 return 'sponsor/sponsorapp';
             case 'pastor':
-                return '/dashboard';
+                return '/pastor/dashboard';
 
             default:
                 return '/dashboard';
